@@ -7,24 +7,25 @@ from django.shortcuts import get_object_or_404
 from django.utils.crypto import get_random_string
 from django.utils.translation import ugettext_lazy as _
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import mixins, viewsets, permissions, status, filters
-from rest_framework.decorators import api_view, permission_classes, action
+from rest_framework import filters, mixins, permissions, status, viewsets
+from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from reviews.models import Genre, Review, Title, Category, User
+from reviews.models import Category, Genre, Review, Title, User
 
 from .filters import TitleFilter
 from .permissions import (
-    IsAdministratorOrReadOnly, IsAdministrator,
-    IsAdministratorModeratorOwnerOrReadOnly
+    IsAdministrator,
+    IsAdministratorModeratorOwnerOrReadOnly,
+    IsAdministratorOrReadOnly,
 )
+
 from .serializers import (
-    CommentSerializer, ReviewSerializer,
-    GenreSerializer, CategorySerializer,
-    TitleCreateSerializer, TitleGetSerializer,
-    TokenObtainSerializer, UserSerializer,
-    MeUserSerializer, SignupSerializer
+    CategorySerializer, CommentSerializer, GenreSerializer,
+    MeUserSerializer, ReviewSerializer, SignupSerializer,
+    TitleCreateSerializer, TitleGetSerializer, TokenObtainSerializer,
+    UserSerializer,
 )
 
 

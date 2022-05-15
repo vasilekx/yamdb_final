@@ -3,11 +3,10 @@
 import csv
 import os
 
-from django.core.management import BaseCommand
 from django.conf import settings
+from django.core.management import BaseCommand
 from django.utils.translation import ugettext_lazy as _
-
-from reviews.models import Category, Genre, Title, Review, Comment, User
+from reviews.models import Category, Comment, Genre, Review, Title, User
 
 ALREDY_LOADED_ERROR_MESSAGE = _(
     'База данных не пуста! '

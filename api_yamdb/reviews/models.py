@@ -6,8 +6,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from .validators import validate_year, validate_username
-
+from .validators import validate_username, validate_year
 
 USER = 'user'
 MODERATOR = 'moderator'
