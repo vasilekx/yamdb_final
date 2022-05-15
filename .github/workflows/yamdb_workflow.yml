@@ -25,6 +25,7 @@ jobs:
         cd api_yamdb/
         python -m flake8
         pytest
+        cd ../
       # cd infra_project/
       # python manage.py test
 
