@@ -81,6 +81,7 @@ jobs:
             echo DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} >> .env
             sudo docker-compose up -d
             sudo docker-compose exec web python manage.py migrate
+            sudo sleep 10s
             sudo docker-compose exec web python manage.py collectstatic --no-input
             sudo docker-compose exec web python manage.py loaddata fixtures.json
 
