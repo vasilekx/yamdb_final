@@ -26,8 +26,6 @@ jobs:
         python -m flake8
         cd ../
         python -m pytest
-      # cd infra_project/
-      # python manage.py test
 
   build_and_push_to_docker_hub:
     name: Build and push Docker image to Docker Hub
@@ -85,12 +83,6 @@ jobs:
             sudo docker-compose exec web python manage.py collectstatic --no-input
             sudo docker-compose exec web python manage.py loaddata fixtures2.json
 
-        # # Выполняет pull образа с DockerHub
-        # sudo docker pull ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
-        # #остановка всех контейнеров
-        # sudo docker stop $(sudo docker ps -a -q)
-        # sudo docker run --rm -d -p 5000:5000 ${{ secrets.DOCKER_USERNAME }}/infra_actions
-  
   send_message:
     name: Telegram Message
     runs-on: ubuntu-latest
