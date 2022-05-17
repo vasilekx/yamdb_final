@@ -52,6 +52,7 @@ jobs:
           context: api_yamdb
           file: api_yamdb/Dockerfile
           push: true
+          no-cache: true
           tags: ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
 
   deploy:
