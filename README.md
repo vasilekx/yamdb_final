@@ -2,3 +2,91 @@
 yamdb_final
 
 ![example workflow](https://github.com/vasilekx/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
+# Проект YaMDb
+
+## Описание
+
+Проект YaMDb собирает отзывы пользователей на произведения. Произведения делятся на категории: 'Книги', 'Фильмы', 'Музыка'. Список категорий может быть расширен администратором.
+Сами произведения в YaMDb не хранятся, здесь нельзя посмотреть фильм или послушать музыку.
+В каждой категории есть произведения: книги, фильмы или музыка. Например, в категории 'Книги' могут быть произведения 'Винни-Пух и все-все-все' и 'Марсианские хроники', а в категории 'Музыка' — песня 'Давеча' группы 'Насекомые' и вторая сюита Баха.
+Произведению может быть присвоен жанр из списка предустановленных. Новые жанры может создавать только администратор.
+
+Благодарные или возмущённые пользователи оставляют к произведениям текстовые отзывы и ставят произведению оценку в диапазоне от одного до десяти; из пользовательских оценок формируется усреднённая оценка произведения — рейтинг. На одно произведение пользователь может оставить только один отзыв.
+
+## Применяемые технологии
+ - Python 3.7
+ - Django 2.2.16
+ - Django REST Framework 3.12.4
+ - Simple JWT 4.7.2
+ - Postgres 13.0
+ - Nginx 1.21.3
+ - Docker 20.10.14
+ - Docker-Compose 2.4.1.
+
+## Установка сервиса
+Проверьте установлен ли у вас Docker 
+```bash
+sudo docker -v
+```
+Если Docker отсутствует, то необходимо его [установить](https://docs.docker.com/engine/install/). Вместе с Docker также устанавливается Docker Compose. После установки, проверьте установлена ли у вас Docker Compose версии 2.4.1 или новее:
+```bash
+docker-compose -v
+```
+Если версия Docker Compose ниже 2.4.1 необходимо [обновить Docker Compose](https://docs.docker.com/compose/install/).
+
+
+Клонировать репозиторий и перейти в него в командной строке:
+```bash
+git clone git@github.com:vasilekx/infra_sp2.git
+```
+Cоздать в клонированной директории файл .env:
+```python
+DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
+POSTGRES_DB=postgres_db_1 # имя базы данных
+POSTGRES_USER=postgres_user_1 # логин для подключения к базе данных
+POSTGRES_PASSWORD=qawsed123456 # пароль для подключения к БД (установите свой)
+DB_HOST=db # название сервиса (контейнера)
+DB_PORT=5432 # порт для подключения к БД
+DJANGO_SECRET_KEY='DJANGO_SECRET_KEY' # секретный ключ Django
+```
+Создать и запустить контейнеры:
+```bash
+sudo docker-compose up -d
+```
+Выполнить миграции:
+```bash
+sudo docker-compose exec web python manage.py migrate
+```
+Создать суперпользователя:
+```bash
+sudo docker-compose exec web python manage.py createsuperuser
+```
+Собирать статические файлы:
+```bash
+sudo docker-compose exec web python manage.py collectstatic --no-input
+```
+Заполнить базу данными:
+```bash
+sudo docker-compose exec web python manage.py loaddata fixtures.json
+```
+
+### Альтернативный способ заполнения базы данными из фаилов cvs
+*Работает на пустой базе!*
+```bash
+sudo docker-compose exec web python manage.py data_import
+```
+
+## Документация к YaMDb API
+```
+http://localhost/redoc/
+```
+### Административная панель
+```
+http://localhost/admin/
+```
+
+## Авторы
+1. Владислав Василенко ([vasilekx](https://github.com/vasilekx)) - управление пользователями
+2. Писарева Светлана ([V0ronaVk0r0ne](https://github.com/V0ronaVk0r0ne)) - категории Categories, жанры Genres и произведения (Titles)
+3. Виктор ([ViktorLuka](https://github.com/ViktorLuka)) - отзывы (Review) и комментарии (Comments)
