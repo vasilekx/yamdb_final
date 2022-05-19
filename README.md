@@ -13,27 +13,16 @@
 
 ## Применяемые технологии
 [![Python](https://img.shields.io/badge/Python-3.7-blue?style=flat-square&logo=Python&logoColor=3776AB&labelColor=d0d0d0)](https://www.python.org/)
-
 [![Django](https://img.shields.io/badge/Django-2.2.16-blue?style=flat-square&logo=Django&logoColor=092E20&labelColor=d0d0d0)](https://www.djangoproject.com/)
-
 [![Django REST Framework](https://img.shields.io/badge/Django%20REST%20Framework-3.12.4-blue?style=flat-square&logo=Django&logoColor=a30000&labelColor=d0d0d0)](https://www.django-rest-framework.org/)
-
 [![Simple JWT](https://img.shields.io/badge/Simple%20JWT%20-4.7.2-blue?style=flat-square&logo=github&logoColor=4285F4&labelColor=d0d0d0)](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/)
-
 [![gunicorn](https://img.shields.io/badge/gunicorn-20.0.4-blue?style=flat-square&logo=gunicorn&logoColor=499848&labelColor=d0d0d0)](https://gunicorn.org/)
-
 [![Postgres](https://img.shields.io/badge/Postgres-13.0-blue?style=flat-square&logo=PostgreSQL&logoColor=4169E1&labelColor=d0d0d0)](https://www.postgresql.org/)
-
 [![Nginx](https://img.shields.io/badge/Nginx-1.21.3-blue?style=flat-square&logo=NGINX&logoColor=009639&labelColor=d0d0d0)](https://nginx.org/ru/)
-
 [![Docker](https://img.shields.io/badge/Docker-20.10.16-blue?style=flat-square&logo=Docker&logoColor=2496ED&labelColor=d0d0d0)](https://www.docker.com/)
-
 [![Docker-Compose](https://img.shields.io/badge/Docker%20Compose-2.5.0-blue?style=flat-square&logo=Docker&logoColor=2496ED&labelColor=d0d0d0)](https://www.docker.com/)
-
 [![Docker Hub](https://img.shields.io/badge/Docker%20Hub-service-blue?style=flat-square&logo=Docker&logoColor=2496ED&labelColor=d0d0d0)](https://hub.docker.com/)
-
 [![GitHub%20Actions](https://img.shields.io/badge/GitHub%20Actions-service-blue?style=flat-square&logo=GitHub%20actions&logoColor=2088FF&labelColor=d0d0d0)](https://hub.docker.com/)
-
 [![Yandex.Cloud](https://img.shields.io/badge/Yandex.Cloud-service-blue?style=flat-square&labelColor=d0d0d0)](https://hub.docker.com/)
 
 ## Установка сервиса
