@@ -1,9 +1,6 @@
-# yamdb_final
-yamdb_final
+# CI/CD для проекта YaMDb
 
 ![example workflow](https://github.com/vasilekx/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
-
-# Проект YaMDb
 
 ## Описание
 
@@ -15,6 +12,8 @@ yamdb_final
 Благодарные или возмущённые пользователи оставляют к произведениям текстовые отзывы и ставят произведению оценку в диапазоне от одного до десяти; из пользовательских оценок формируется усреднённая оценка произведения — рейтинг. На одно произведение пользователь может оставить только один отзыв.
 
 ## Применяемые технологии
+[![Python](https://img.shields.io/badge/Python-3.7-blue?style=flat-square&logo=Python&logoColor=3776AB&labelColor=111111)](https://www.python.org/)
+
  - Python 3.7
  - Django 2.2.16
  - Django REST Framework 3.12.4
