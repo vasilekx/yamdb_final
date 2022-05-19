@@ -14,9 +14,6 @@ services:
       retries: 10
   web:
     image: vasilekx/api_yamdb:latest
-    # build:
-    #     context: ../api_yamdb
-    #     dockerfile: ./Dockerfile
     restart: always
     volumes:
       - static_value:/app/static/
@@ -24,7 +21,6 @@ services:
     depends_on:
       db:
         condition: service_healthy
-      # - db
     env_file:
       - ./.env
   nginx:
