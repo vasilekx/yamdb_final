@@ -17,7 +17,7 @@ DEBUG = False
 # ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', default=['*'])
 # ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', default=['localhost', '127.0.0.1', '[::1]]').split(" ")
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', default='web').split(" ")
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', default='web localhost 127.0.0.1 [::1]]').split(" ")
 
 
 INSTALLED_APPS = [
