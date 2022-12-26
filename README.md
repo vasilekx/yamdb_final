@@ -86,14 +86,122 @@ sudo docker-compose exec web python manage.py loaddata fixtures.json
 sudo docker-compose exec web python manage.py data_import
 ```
 
+## Доступ к YaMDb API
+
+[http://62.113.114.234/api/v1/](http://62.113.114.234/api/v1/)
+
 ## Документация к YaMDb API
-```
-http://62.113.114.234/redoc/
-```
+
+[http://62.113.114.234/redoc/](http://62.113.114.234/redoc/)
+
 ## Административная панель
+
+[http://62.113.114.234/admin/](http://62.113.114.234/admin/)
+
+
+## Примеры запросов к API
+
+### Регистрация нового пользователя:
+###### Доступно без токена
+
+**POST**-запрос:
+
+```http
+http://62.113.114.234/api/v1/auth/signup/
 ```
-http://62.113.114.234/admin/
+
+Тело запроса:
+
+```json
+{
+  "email": "new_user@test.ru",
+  "username": "new_user"
+}
 ```
+
+Ответ:
+
+```json
+{
+  "email": "new_user@test.ru",
+  "username": "new_user"
+}
+```
+
+Сообщение с токеном на email:
+```
+From: noreply@apiyamdb.ru
+To: new_user@test.ru
+Date: Mon, 26 Dec 2022 18:28:25 -0000
+
+Ваш проверочный код rvKSy6rsRS.
+```
+
+---
+
+### Получение списка всех жанров:
+###### Доступно без токена
+
+**GET**-запрос:
+
+```http
+http://62.113.114.234/api/v1/genres/
+```
+
+Ответ:
+
+```json
+{
+    "count": 15,
+    "next": "http://62.113.114.234/api/v1/genres/?page=2",
+    "previous": null,
+    "results": [
+        {
+            "name": "Rock-n-roll",
+            "slug": "rock-n-roll"
+        },
+        {
+            "name": "Баллада",
+            "slug": "ballad"
+        },
+        {
+            "name": "Вестерн",
+            "slug": "western"
+        },
+        {
+            "name": "Гонзо",
+            "slug": "gonzo"
+        },
+        {
+            "name": "Детектив",
+            "slug": "detective"
+        },
+        {
+            "name": "Драма",
+            "slug": "drama"
+        },
+        {
+            "name": "Классика",
+            "slug": "classical"
+        },
+        {
+            "name": "Комедия",
+            "slug": "comedy"
+        },
+        {
+            "name": "Рок",
+            "slug": "rock"
+        },
+        {
+            "name": "Роман",
+            "slug": "roman"
+        }
+    ]
+}
+```
+
+## Будущая доработка:
+ * Отправка проверочного кода на электронную почту пользователя при регистрации.
 
 ## Авторы
 1. Владислав Василенко ([vasilekx](https://github.com/vasilekx)) - управление пользователями
