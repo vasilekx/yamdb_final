@@ -88,11 +88,11 @@ sudo docker-compose exec web python manage.py data_import
 
 ## Документация к YaMDb API
 ```
-http://51.250.102.223/redoc/
+http://62.113.114.234/redoc/
 ```
 ## Административная панель
 ```
-http://51.250.102.223/admin/
+http://62.113.114.234/admin/
 ```
 
 ## Авторы
