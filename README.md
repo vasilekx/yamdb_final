@@ -88,15 +88,15 @@ sudo docker-compose exec web python manage.py data_import
 
 ## Доступ к YaMDb API
 
-[http://62.113.114.234/api/v1/](http://62.113.114.234/api/v1/)
+[http://localhost/api/v1/](http://localhost/api/v1/)
 
 ## Документация к YaMDb API
 
-[http://62.113.114.234/redoc/](http://62.113.114.234/redoc/)
+[http://localhost/redoc/](http://localhost/redoc/)
 
 ## Административная панель
 
-[http://62.113.114.234/admin/](http://62.113.114.234/admin/)
+[http://localhost/admin/](http://localhost/admin/)
 
 
 ## Примеры запросов к API
@@ -107,7 +107,7 @@ sudo docker-compose exec web python manage.py data_import
 **POST**-запрос:
 
 ```http
-http://62.113.114.234/api/v1/auth/signup/
+http://localhost/api/v1/auth/signup/
 ```
 
 Тело запроса:
@@ -145,7 +145,7 @@ Date: Mon, 26 Dec 2022 18:28:25 -0000
 **GET**-запрос:
 
 ```http
-http://62.113.114.234/api/v1/genres/
+http://localhost/api/v1/genres/
 ```
 
 Ответ:
@@ -153,7 +153,7 @@ http://62.113.114.234/api/v1/genres/
 ```json
 {
     "count": 15,
-    "next": "http://62.113.114.234/api/v1/genres/?page=2",
+    "next": "http://localhost/api/v1/genres/?page=2",
     "previous": null,
     "results": [
         {
